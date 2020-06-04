@@ -8,26 +8,35 @@ namespace Algorithms
     //Array = [1, 2, 3]; K = 2; Bigest even sume = 4
     class CodingChallangeOne
     {
-        public void Solution(int[] A, int K)
+        public int Solution(int[] A, int K)
         {
-            SumNumbers(A, new int[K], 0, 0);
+            int sum = SumNumbers(A, new int[K], 0, 0, -1);
+            return sum; 
         }
 
-        private void SumNumbers(int[] inputNumbers, int[] numbersToSume, int indexOfNumber, int indexForNumber)
+        private int SumNumbers(int[] inputNumbers, int[] numbersToSum, int indexOfNumber, int indexForNumber, int maxSum)
         {
-            if (indexForNumber == numbersToSume.Length)
+            if (indexForNumber == numbersToSum.Length)
             {
-                //Sum
-                return;
+                int sum = 0;
+                for(int i = 0; i < numbersToSum.Length; i++)
+                {
+                    sum += numbersToSum[i];
+                }
+                
+                return sum % 2 == 0 && sum > maxSum ? sum : maxSum;
             }
 
             if (indexOfNumber == inputNumbers.Length)
             {
-                return;
+                return maxSum;
             }
 
-            SumNumbers(inputNumbers, numbersToSume, indexOfNumber + 1, indexForNumber + 1);
-            SumNumbers(inputNumbers, numbersToSume, indexOfNumber + 1, indexForNumber);
+            numbersToSum[indexForNumber] = inputNumbers[indexOfNumber];
+            int sum1 = SumNumbers(inputNumbers, numbersToSum, indexOfNumber + 1, indexForNumber + 1, maxSum);
+            sum1 = sum1 % 2 == 0 && sum1 > maxSum ? sum1 : maxSum;
+            int sum2 = SumNumbers(inputNumbers, numbersToSum, indexOfNumber + 1, indexForNumber, sum1);
+            return sum2;
         }
     }
 }

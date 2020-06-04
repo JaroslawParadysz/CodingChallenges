@@ -6,7 +6,8 @@ namespace Algorithms
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            CodingChallangeOne codingChallangeOne = new CodingChallangeOne();
+            int sum = codingChallangeOne.Solution(new int[] { 1, 2, 3, 4, 5 }, 2);
         }
     }
 }
