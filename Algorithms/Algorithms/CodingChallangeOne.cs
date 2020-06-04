@@ -8,6 +8,26 @@ namespace Algorithms
     //Array = [1, 2, 3]; K = 2; Bigest even sume = 4
     class CodingChallangeOne
     {
+        public void Solution(int[] A, int K)
+        {
+            SumNumbers(A, new int[K], 0, 0);
+        }
 
+        private void SumNumbers(int[] inputNumbers, int[] numbersToSume, int indexOfNumber, int indexForNumber)
+        {
+            if (indexForNumber == numbersToSume.Length)
+            {
+                //Sum
+                return;
+            }
+
+            if (indexOfNumber == inputNumbers.Length)
+            {
+                return;
+            }
+
+            SumNumbers(inputNumbers, numbersToSume, indexOfNumber + 1, indexForNumber + 1);
+            SumNumbers(inputNumbers, numbersToSume, indexOfNumber + 1, indexForNumber);
+        }
     }
 }
