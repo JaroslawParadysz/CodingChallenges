@@ -1,15 +1,16 @@
 using System;
+using Algorithms.CodingChallangeOne;
 using Xunit;
 
 namespace Algorithms.Tests
 {
     public class CodingChallangeOneTest
     {
-        private readonly CodingChallangeOne _codingChallangeOne;
+        private readonly Algorithm _codingChallangeOne;
 
         public CodingChallangeOneTest()
         {
-            _codingChallangeOne = new CodingChallangeOne();
+            _codingChallangeOne = new Algorithm();
         }
 
         [Theory]

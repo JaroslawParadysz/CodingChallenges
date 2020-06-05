@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Algorithms.CodingChallangeOne;
+using System;
 
 namespace Algorithms
 {
@@ -6,7 +7,7 @@ namespace Algorithms
     {
         static void Main(string[] args)
         {
-            CodingChallangeOne codingChallangeOne = new CodingChallangeOne();
+            Algorithm codingChallangeOne = new Algorithm();
             int sum = codingChallangeOne.Solution(new int[] { 1, 2, 3, 4, 5 }, 3);
         }
     }
