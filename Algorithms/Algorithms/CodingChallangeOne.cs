@@ -33,10 +33,8 @@ namespace Algorithms
             }
 
             numbersToSum[indexForNumber] = inputNumbers[indexOfNumber];
-            int sum1 = SumNumbers(inputNumbers, numbersToSum, indexOfNumber + 1, indexForNumber + 1, maxSum);
-            sum1 = sum1 % 2 == 0 && sum1 > maxSum ? sum1 : maxSum;
-            int sum2 = SumNumbers(inputNumbers, numbersToSum, indexOfNumber + 1, indexForNumber, sum1);
-            return sum2;
+            maxSum = SumNumbers(inputNumbers, numbersToSum, indexOfNumber + 1, indexForNumber + 1, maxSum);            
+            return SumNumbers(inputNumbers, numbersToSum, indexOfNumber + 1, indexForNumber, maxSum);
         }
     }
 }
