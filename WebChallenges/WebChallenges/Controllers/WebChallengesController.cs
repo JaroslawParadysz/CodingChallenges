@@ -21,5 +21,12 @@ namespace WebChallenges.Controllers
             decimal? result = _repository.GetTotal(invoiceId);
             return Ok(result);
         }
+
+        [HttpGet]
+        public IActionResult GetTotalOfUnpaid()
+        {
+            decimal result = _repository.GetTotalOfUnpaid();
+            return Ok(result);
+        }
     }
 }
