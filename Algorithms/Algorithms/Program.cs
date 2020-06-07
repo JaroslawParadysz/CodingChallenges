@@ -7,7 +7,7 @@ namespace Algorithms
     {
         static void Main(string[] args)
         {
-            Algorithm codingChallangeOne = new Algorithm();
+            RecursionAlgorithm codingChallangeOne = new RecursionAlgorithm();
             int sum = codingChallangeOne.Solution(new int[] { 1, 2, 3, 4, 5 }, 3);
         }
     }

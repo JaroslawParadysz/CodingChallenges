@@ -5,11 +5,11 @@ namespace Algorithms.Tests
 {
     public class CodingChallangeOneTest
     {
-        private readonly Algorithm _codingChallangeOne;
+        private readonly RecursionAlgorithm _codingChallangeOne;
 
         public CodingChallangeOneTest()
         {
-            _codingChallangeOne = new Algorithm();
+            _codingChallangeOne = new RecursionAlgorithm();
         }
 
         [Theory]
