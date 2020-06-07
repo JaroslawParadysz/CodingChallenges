@@ -1,4 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using System;
+using System.Collections.Generic;
 using WebChallenges.Domain;
 
 namespace WebChallenges.Controllers
@@ -26,6 +28,15 @@ namespace WebChallenges.Controllers
         public IActionResult GetTotalOfUnpaid()
         {
             decimal result = _repository.GetTotalOfUnpaid();
+            return Ok(result);
+        }
+
+        [HttpGet("from={from}")]
+        [HttpGet("to={to}")]
+        [HttpGet("from={from}&to={to}")]
+        public IActionResult GetItemsReport(DateTime? from, DateTime? to)
+        {
+            IReadOnlyDictionary<string, long> result = _repository.GetItemsReport(from, to);
             return Ok(result);
         }
     }
