@@ -1,0 +1,42 @@
+{
+	"info": {
+		"_postman_id": "8f6a3ed6-302f-423d-9563-26931789c14e",
+		"name": "WebChallenges",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "GetTotal",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:44369/api/webchallenges/1",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44369",
+					"path": [
+						"api",
+						"webchallenges",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetTotalOfUnpaid",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": ""
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
