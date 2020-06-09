@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Text;
-
-namespace Algorithms.CodingChallangeOne
+﻿namespace Algorithms.CodingChallangeOne
 {
     public class StandardAlgorithm : IAlgorithm
     {
