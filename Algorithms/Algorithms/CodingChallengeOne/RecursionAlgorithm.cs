@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace Algorithms.CodingChallangeOne
+﻿namespace Algorithms.CodingChallangeOne
 {
     public class RecursionAlgorithm : IAlgorithm
     {
