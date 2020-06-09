@@ -9,12 +9,30 @@ namespace Algorithms.CodingChallangeOne
     {
         public int Solution(int[] A, int K)
         {
-            A = QuickSort(A, 0, A.Length - 1);
+            A = DescendingQuickSort(A, 0, A.Length - 1);
+            
+            for (int i = 0; i < A.Length; i++)
+            {
+                int sumPart1 = 0;
+                for (int j = i; j < (i + K - 1); j++)
+                {
+                    sumPart1 += A[j];
+                }
 
+                for (int l = K - 1; l < A.Length; l++)
+                {
+                    int sum = sumPart1 + A[l];
+
+                    if (sum % 2 == 0)
+                    {
+                        return sum;
+                    }
+                }
+            }
             return -1;
         }
 
-        private int[] QuickSort(int[] dataToSort, int start, int end)
+        private int[] DescendingQuickSort(int[] dataToSort, int start, int end)
         {
             if (start >= end)
             {
@@ -24,7 +42,7 @@ namespace Algorithms.CodingChallangeOne
             int indexOfFirstBigestNumber = start;
             for (int i = start; i <= end; i++)
             {
-                if (dataToSort[i] >= dataToSort[end])
+                if (dataToSort[i] <= dataToSort[end])
                 {
                     continue;
                 }
@@ -42,8 +60,8 @@ namespace Algorithms.CodingChallangeOne
             dataToSort[end] = dataToSort[indexOfFirstBigestNumber];
             dataToSort[indexOfFirstBigestNumber] = pivotTemp;
 
-            QuickSort(dataToSort, start, indexOfFirstBigestNumber - 1);
-            QuickSort(dataToSort, indexOfFirstBigestNumber + 1, end);
+            DescendingQuickSort(dataToSort, start, indexOfFirstBigestNumber - 1);
+            DescendingQuickSort(dataToSort, indexOfFirstBigestNumber + 1, end);
             return dataToSort;
         }
     }

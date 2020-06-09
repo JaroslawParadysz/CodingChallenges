@@ -8,7 +8,7 @@ namespace Algorithms
         static void Main(string[] args)
         {
             StandardAlgorithm codingChallangeOne = new StandardAlgorithm();
-            int sum = codingChallangeOne.Solution(new int[] { 5, 2, 3, 4, 5, 45, 32, 4, 89, 89, 78, 89 }, 3);
+            int sum = codingChallangeOne.Solution(new int[] { 1,2,3,4,5 }, 3);
         }
     }
 }
