@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Text;
 
 namespace Algorithms.CodingChallangeOne
@@ -8,28 +9,42 @@ namespace Algorithms.CodingChallangeOne
     {
         public int Solution(int[] A, int K)
         {
-            int indexOfSum = 0;
-            int[] arrayOfSum = new int[K];
-            int indexOfA = 0;
+            A = QuickSort(A, 0, A.Length - 1);
 
-            Calc(A, indexOfA, arrayOfSum, indexOfSum);
-
-            return 0;
+            return -1;
         }
 
-        private void Calc(int[] a, int indexOfA, int[] arrayOfSum, int indexOfSum)
+        private int[] QuickSort(int[] dataToSort, int start, int end)
         {
-            if (indexOfSum == arrayOfSum.Length)
+            if (start >= end)
             {
-                for (int i = 0; i < arrayOfSum.Length; i++)
-                {
-                    Console.WriteLine(arrayOfSum[i]);
-                }
-                Console.WriteLine();
-                return;
+                return dataToSort;
             }
-            arrayOfSum[indexOfSum] = a[indexOfA];
-            Calc(a, indexOfA + 1, arrayOfSum, indexOfSum + 1);
+
+            int indexOfFirstBigestNumber = start;
+            for (int i = start; i <= end; i++)
+            {
+                if (dataToSort[i] >= dataToSort[end])
+                {
+                    continue;
+                }
+
+                if (indexOfFirstBigestNumber != i)
+                {
+                    int temp = dataToSort[i];
+                    dataToSort[i] = dataToSort[indexOfFirstBigestNumber];
+                    dataToSort[indexOfFirstBigestNumber] = temp;
+                }
+                indexOfFirstBigestNumber++;
+            }
+
+            int pivotTemp = dataToSort[end];
+            dataToSort[end] = dataToSort[indexOfFirstBigestNumber];
+            dataToSort[indexOfFirstBigestNumber] = pivotTemp;
+
+            QuickSort(dataToSort, start, indexOfFirstBigestNumber - 1);
+            QuickSort(dataToSort, indexOfFirstBigestNumber + 1, end);
+            return dataToSort;
         }
     }
 }
